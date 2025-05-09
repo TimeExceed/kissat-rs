@@ -5,7 +5,6 @@ use std::path::*;
 extern crate giputils;
 
 fn main() -> Result<(), String> {
-    giputils::build::git_submodule_update()?;
     println!("cargo:rerun-if-changed=./kissat");
 
     let kissat_cpps = collect_cpps(&[&Path::new("kissat/src")]);
